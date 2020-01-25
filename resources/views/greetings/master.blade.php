@@ -38,6 +38,6 @@
         <div class="footer">
             <h1>hello12345</h1>
         </div>
-        @endsection
+        @show
     </body>
 </html>

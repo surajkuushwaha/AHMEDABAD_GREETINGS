@@ -1,0 +1,2 @@
+php artisan make:migration Events --create=Events
+php artisan migrate:fresh

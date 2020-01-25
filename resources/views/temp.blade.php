@@ -1,7 +1,8 @@
+@extends('greetings/master')
 <?php
 $a = "suraj";
 ?>
-@extends('greetings/master') 
+ 
 @section('title',$a) 
 @section('header')@parent@endsection
 
