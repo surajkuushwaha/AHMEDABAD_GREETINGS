@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Ahmedabad Greetings
                 </div>
 
                 <div class="links">

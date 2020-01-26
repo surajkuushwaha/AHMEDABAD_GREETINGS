@@ -1,2 +1,7 @@
+php artisan serve
+
 php artisan make:migration Events --create=Events
 php artisan migrate:fresh
+
+http://127.0.0.1:8000/
+http://localhost
