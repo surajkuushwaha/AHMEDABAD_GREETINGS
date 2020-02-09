@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{{ asset('image/fav.png') }}" type="image/gif" sizes="16x16">
 
         <title>AHMEDABAD GREETINGS</title>
 
@@ -79,7 +80,11 @@
                 </div>
             @endif
 
-            <div class="content">
+            <div class="content"><p><?php
+            $req = session()->get('info');
+            print_r($req['email']);
+
+            ?></p>
                 <div class="title m-b-md">
                     Ahmedabad Greetings
                 </div>

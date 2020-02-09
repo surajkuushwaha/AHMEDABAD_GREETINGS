@@ -25,3 +25,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/home1','tempcontroller@index');
+Route::get('/home2','tempcontroller@index1');//temp
+
+Route::post('/upload','tempcontroller@up')->name('upload');//temp
