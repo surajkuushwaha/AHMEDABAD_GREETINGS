@@ -80,11 +80,7 @@
                 </div>
             @endif
 
-            <div class="content"><p><?php
-            $req = session()->get('info');
-            print_r($req['email']);
-
-            ?></p>
+            <div class="content"><p></p>
                 <div class="title m-b-md">
                     Ahmedabad Greetings
                 </div>
