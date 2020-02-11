@@ -62,6 +62,13 @@
     <body>
         <form action="update1" method="post">
             @csrf
+            <input type="radio" name="action" value="insert" />
+            <label for="insert">insert</label>
+            <input type="radio" name="action" value="update" />
+            <label for="update">update</label>
+            <input type="radio" name="action" value="delete" />
+            <label for="update">delete</label>
+
             <select name="id">
                 @foreach($data as $i)
                 <option value="{{$i->id}}">{{$i->id}}</option>

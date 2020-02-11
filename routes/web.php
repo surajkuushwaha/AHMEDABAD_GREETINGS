@@ -11,6 +11,31 @@
 |
 */
 
+/////////////////////////////////ADMIN////////////////////////////
+Route::get('admin','AdminController@index');
+Route::get('admin/user','AdminController@user');
+Route::get('admin/product','AdminController@Product');
+
+//////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Route::view('form','upload');
 // Route::view('update1','upload');
 Route::post('insert','tempcontroller@insert');

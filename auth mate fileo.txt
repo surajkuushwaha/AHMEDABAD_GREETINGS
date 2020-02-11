@@ -1,0 +1,16 @@
+
+//laravel ui will be install
+**composer require laravel/ui
+
+
+
+//makes pages required for auth
+**php artisan ui vue --auth
+**php artisan ui bootstrap --auth
+**php artisan ui react --auth
+
+
+
+
+//fro installing npm jo sare js and css ko manage karta he 
+npm install && npm run dev

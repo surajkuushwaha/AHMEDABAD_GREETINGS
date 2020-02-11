@@ -52,12 +52,29 @@ class tempcontroller extends Controller
         // print_r($req->input());
     }
     function update1(Request $req)
-    {
-        $a = temp::find($req->id);
-        $a->name= $req->name;
-        $a->enroll=$req->enroll;
-        $a->save();
-        return redirect('update');
+    {   
+        if($req->action == 'update')
+        {
+            $a = temp::find($req->id);
+            $a->name= $req->name;
+            $a->enroll=$req->enroll;
+            echo $a->save();
+            // return redirect('update');
+        }
+        if($req->action == 'insert')
+        {
+            $user = new temp;
+            $user->name = $req->name;
+            $user->enroll=$req->enroll;
+            $user->save();
+            return redirect('update');
+        }
+        if($req->action == 'delete')
+        {
+            $user1 = temp::find($req->id);
+            echo $user1->delete();
+            // temp::destroy([1,2,3]);//delete by row number
+        }
     }
     
     
