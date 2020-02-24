@@ -11,6 +11,7 @@
             rel="stylesheet"
             href="{{ asset('css/bootstrap/bootstrap.css') }}"
         />
+        
         @yield('css')
 
         <title>@yield('title')</title>
@@ -56,6 +57,9 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">Party Plots</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url('/admin/Address') }}" class="nav-link">Address</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -183,5 +187,7 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
+        
+        
     </body>
 </html>

@@ -18,6 +18,7 @@ class Addresss extends Migration
             $table->string('street',100);
             $table->integer('Pin_code');
             $table->string('city',20);
+            $table->string('type',10);
             $table->string('state',20);
             $table->timestamps();
         });

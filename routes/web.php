@@ -14,7 +14,11 @@
 /////////////////////////////////ADMIN////////////////////////////
 Route::get('admin','AdminController@index');
 Route::get('admin/user','AdminController@user');
+Route::post('edituser','AdminController@edituser');
+Route::post('updateuser','AdminController@updateuser');
+Route::post('finaledit','AdminController@finaledit');
 Route::get('admin/product','AdminController@Product');
+Route::get('admin/Address','AdminController@Address');
 
 //////////////////////////////////////////////////////////////////
 
