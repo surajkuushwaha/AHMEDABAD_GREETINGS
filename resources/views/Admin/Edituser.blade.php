@@ -1,9 +1,9 @@
 @extends('Admin/master')
 <?php
-$a = "suraj";
+$a = $data[0];
 ?>
 
-@section('title',$a) @section('header') @parent @endsection @section('content')
+@section('title',$a->name) @section('header') @parent @endsection @section('content')
 
 
 <div class="container-fluid">
@@ -53,6 +53,9 @@ $a = "suraj";
                             </div>
                    
                     <button type="submit" class="btn btn-primary">Update</button>
+                    
+                   
+                    
         </form>
 @endforeach
 <!--             

@@ -13,50 +13,131 @@ $a = "suraj";
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">id</th>
                         <th scope="col">Product_id</th>
                         <th scope="col">Product_name</th>
                         <th scope="col">Product_description</th>
                         <th scope="col">Amount</th>
                         <th scope="col">Discount</th>
                         <th scope="col">category</th>
+                        <th scope="col" colspan="3">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach($data1 as $i)
                     <tr>
-                        <th scope="row">{{$i->id}}</th>
-                        <td>{{$i->Product_id}}</td>
+                        <td scope="row">{{$i->Product_id}}</td>
                         <td>{{$i->Product_name}}</td>
                         <td>{{$i->Product_description}}</td>
                         <td>{{$i->Amount}}</td>
                         <td>{{$i->Discount}}</td>
                         <td>{{$i->category}}</td>
+                        <td>
+                            
+                                <button
+                                    type="submit"
+                                    class="btn btn-light"
+                                    name="bt"
+                                    value="{{$i->id}}"
+                                    data-toggle="modal" data-target="#exampleModal"
+                                >
+                                    <img
+                                        src="{{ asset('svg/add.svg') }}"
+                                        alt="ds"
+                                        height="40"
+                                        width="30"
+                                    />
+                                </button>
+                            
+                        </td>
+                        <td>
+                            <form action="#" method="POST">
+                            @csrf
+                                <button
+                                    class="btn btn-success"
+                                    data-toggle="modal"
+                                    data-target="#edit"
+                                    value="{{$i->id}}"
+                                    name="bt"
+                                >
+                                    <img
+                                        src="{{ asset('svg/edit.svg') }}"
+                                        alt="ds"
+                                        height="40"
+                                        width="30"
+                                    />
+                                </button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="#" method="POST">
+                            @csrf
+                                <button
+                                    class="btn btn-danger"
+                                    data-toggle="modal"
+                                    data-target="#edit"
+                                    value="{{$i->id}}"
+                                    name="bt"
+                                >
+                                    <img
+                                        src="{{ asset('svg/delete.svg') }}"
+                                        alt="ds"
+                                        height="40"
+                                        width="30"
+                                    />
+                                </button>
+                            </form>
+                        </td>
                     </tr>
-                    <input
-                                type="image"
-                                src="{{ asset('svg/edit.svg') }}"
-                                name="edit"
-                                height="40"
-                                width="30"
-                                data-toggle="modal"
-                                data-target="#edit"
-                                name="xyz"
-                                value="select"
-                                onclick="select()"
-                            />
-                    @endforeach
-                    <?php
-                      function select(){
-                        echo "The select function is called.";
-                     }
-                    ?>
                     
+                    
+                    @endforeach                  
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-2"></div>
+        <div class="col-sm-2"><!-- model -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <form>
+                    <div class="form-group">
+                    <label for="formGroupExampleInput">Product Name</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Product Description</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-row">
+                            <div class="form-group col-md-6">
+                            <label for="inputCity">Amount</label>
+                            <input type="text" class="form-control" id="inputCity">
+                            </div>
+                            <div class="form-group col-md-4">
+                            <label for="inputState">Discount</label>
+                            <input type="text" class="form-control" id="inputCity">
+                            </div>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">category</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                    </form>
+                    </div>
+                </div>
+                </div></div>
     </div>
 </div>
+
 
 @endsection @section('footer') @parent @endsection

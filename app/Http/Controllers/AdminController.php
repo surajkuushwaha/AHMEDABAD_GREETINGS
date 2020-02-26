@@ -57,6 +57,11 @@ class AdminController extends Controller
         return redirect('admin/user');
         
     }
+    function deleteuse(Request $req)
+    {
+        userModel::where('id',$req->bt)->delete();
+        return redirect('admin/user');
+    }
     
     function Product(Request $req)
     {

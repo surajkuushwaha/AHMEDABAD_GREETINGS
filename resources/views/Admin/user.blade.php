@@ -42,13 +42,11 @@ $a = "suraj";
                         <td>{{$i->created_at}}</td>
                         <td>{{$i->updated_at}}</td>
                         <td>
-                            <form action="/edituser" method="POST">
+                            <form action="user/edituser" method="POST">
                                 @csrf
                                 <button
                                     type="submit"
-                                    class="btn"
-                                    data-toggle="modal"
-                                    data-target="#edit"
+                                    class="btn btn-light"
                                     name="bt"
                                     value="{{$i->id}}"
                                 >
@@ -62,11 +60,14 @@ $a = "suraj";
                             </form>
                         </td>
                         <td>
-                            <form action="#">
+                            <form action="user/deleteuse" method="POST">
+                            @csrf
                                 <button
-                                    class="btn"
+                                    class="btn btn-danger"
                                     data-toggle="modal"
                                     data-target="#edit"
+                                    value="{{$i->id}}"
+                                    name="bt"
                                 >
                                     <img
                                         src="{{ asset('svg/delete.svg') }}"
