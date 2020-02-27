@@ -68,6 +68,23 @@ class AdminController extends Controller
         $data = product::all();
         return view('Admin.Product',['data1'=>$data]);
     }
+    function productAdd(Request $req)
+    {
+        $data = new product;
+        $data->Product_name = $req->Product_name;
+        $data->Product_description = $req->Product_description;
+        $data->Amount = $req->Amount;
+        $data->Discount = $req->Discount;
+        $data->category = $req->category;
+        $data->save();
+        return redirect('admin/product');
+
+    }
+    function DeleteProduct(Request $req)
+    {
+        product::where('Product_id',$req->bt)->delete();
+        return redirect('admin/product');
+    }
     function Address(Request $req)
     {
         $data = address::all();
