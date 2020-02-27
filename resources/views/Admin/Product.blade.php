@@ -7,7 +7,21 @@ $a = "suraj";
 <div class="container-flude">
     <div class="row mt-10">
         <div class="col-sm-2">
-            <img src="{{ asset('svg/girl.svg') }}" alt="dots" />
+        <button
+                type="submit"
+                class="btn btn-outline-success "
+                style="margin-top: 10px ; width: 150px;"
+                data-toggle="modal"
+                data-target="#exampleModal"
+            >
+                <img
+                    src="{{ asset('svg/add.svg') }}"
+                    alt="ds"
+                    height="40"
+                    width="30"
+                />ADD
+            </button>
+            
         </div>
         <div class="col-sm-8">
             <table class="table">
@@ -76,20 +90,7 @@ $a = "suraj";
             </table>
         </div>
         <div class="col-sm-2">
-            <button
-                type="submit"
-                class="btn btn-outline-success "
-                style="margin-top: 10px ; width: 150px;"
-                data-toggle="modal"
-                data-target="#exampleModal"
-            >
-                <img
-                    src="{{ asset('svg/add.svg') }}"
-                    alt="ds"
-                    height="40"
-                    width="30"
-                />ADD
-            </button>
+            <img src="{{ asset('svg/girl.svg') }}" alt="dots" />
 
             <!-- model -->
             <div

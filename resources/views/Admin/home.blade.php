@@ -1,4 +1,4 @@
-@extends('admin/master')
+@extends('Admin/master')
 <?php
 $a = "suraj";
 ?>
