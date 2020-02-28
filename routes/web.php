@@ -12,27 +12,31 @@
 */
 
 /////////////////////////////////ADMIN////////////////////////////
-Route::get('admin','AdminController@index');
-Route::get('admin/user','AdminController@user');
-Route::post('admin/user/edituser','AdminController@edituser');
-Route::post('updateuser','AdminController@updateuser');
-Route::post('finaledit','AdminController@finaledit');
-Route::post('admin/user/deleteuse','AdminController@deleteuse');
+Route::group(['middleware' =>['auth','admin']],function(){
+    Route::get('admin','AdminController@index');
+    Route::get('admin/user','AdminController@user');
+    Route::post('admin/user/edituser','AdminController@edituser');
+    Route::post('updateuser','AdminController@updateuser');
+    Route::post('finaledit','AdminController@finaledit');
+    Route::post('admin/user/deleteuse','AdminController@deleteuse');
 
 
 
 
-Route::get('admin/product','AdminController@Product');
-Route::post('admin/product/delete','AdminController@DeleteProduct');
-Route::post('admin/product/add','AdminController@productAdd');
-Route::post('admin/product/editproduct','AdminController@editproduct');
-Route::post('finaleditproduct','AdminController@finaleditproduct');
+    Route::get('admin/product','AdminController@Product');
+    Route::post('admin/product/delete','AdminController@DeleteProduct');
+    Route::post('admin/product/add','AdminController@productAdd');
+    Route::post('admin/product/editproduct','AdminController@editproduct');
+    Route::post('finaleditproduct','AdminController@finaleditproduct');
 
 
 
 
 
-Route::get('admin/Address','AdminController@Address');
+    Route::get('admin/Address','AdminController@Address');
+    });
+// Route::get('admin','AdminController@index');
+
 
 //////////////////////////////////////////////////////////////////
 
