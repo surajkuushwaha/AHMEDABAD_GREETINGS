@@ -58,34 +58,7 @@ $a = $data[0];
                     
         </form>
 @endforeach
-<!--             
-            <table id="datatable" class="table border border-info mt-3">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">name</th>
-                        <th scope="col">email</th>
-                        <th scope="col">address</th>
-                        <th scope="col">phone_no</th>
-                        <th scope="col">created_at</th>
-                        <th scope="col">updated_at</th>
-                        <th scope="col" colspan="2">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($data as $i)
-                    <tr>
-                        <th scope="row">{{$i->id}}</th>
-                        <td>{{$i->name}}</td>
-                        <td>{{$i->email}}</td>
-                        <td>{{$i->address}}</td>
-                        <td>{{$i->phone_no}}</td>
-                        <td>{{$i->created_at}}</td>
-                        <td>{{$i->updated_at}}</td>
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table> -->
+
 
            
         </div>

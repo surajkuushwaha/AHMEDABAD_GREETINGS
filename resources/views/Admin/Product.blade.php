@@ -1,13 +1,14 @@
 @extends('Admin/master')
 <?php
-$a = "suraj";
+$a = "Product";
 ?>
 
 @section('title',$a) @section('header') @parent @endsection @section('content')
 <div class="container-flude">
     <div class="row mt-10">
-        <div class="col-sm-2">
-        <button
+        <div class="col-sm-1"></div>
+        <div class="col-sm-9">
+            <button
                 type="submit"
                 class="btn btn-outline-success "
                 style="margin-top: 10px ; width: 150px;"
@@ -21,10 +22,7 @@ $a = "suraj";
                     width="30"
                 />ADD
             </button>
-            
-        </div>
-        <div class="col-sm-8">
-            <table class="table">
+            <table class="table border border-info mt-3">
                 <thead>
                     <tr>
                         <th scope="col">Product_id</th>
@@ -33,6 +31,8 @@ $a = "suraj";
                         <th scope="col">Amount</th>
                         <th scope="col">Discount</th>
                         <th scope="col">category</th>
+                        <th scope="col">created_at</th>
+                        <th scope="col">updated_at</th>
                         <th scope="col" colspan="2">Action</th>
                     </tr>
                 </thead>
@@ -45,14 +45,16 @@ $a = "suraj";
                         <td>{{$i->Amount}}</td>
                         <td>{{$i->Discount}}</td>
                         <td>{{$i->category}}</td>
+                        <td>{{$i->created_at}}</td>
+                        <td>{{$i->updated_at}}</td>
                         <td>
-                            <form action="#" method="POST">
+                            <form action="product/editproduct" method="POST">
                                 @csrf
                                 <button
                                     class="btn btn-success"
                                     data-toggle="modal"
                                     data-target="#edit"
-                                    value="{{$i->id}}"
+                                    value="{{$i->Product_id}}"
                                     name="bt"
                                 >
                                     <img
@@ -89,8 +91,13 @@ $a = "suraj";
                 </tbody>
             </table>
         </div>
-        <div class="col-sm-2">
-            <img src="{{ asset('svg/girl.svg') }}" alt="dots" />
+        <div class="col-sm-2" style="margin-top: 10px; margin-bottom: 10px; ">
+            <img
+                src="{{ asset('svg/girl.svg') }}"
+                height="500px"
+                width="auto"
+                alt="dots"
+            />
 
             <!-- model -->
             <div
