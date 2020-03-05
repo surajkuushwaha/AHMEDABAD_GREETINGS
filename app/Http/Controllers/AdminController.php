@@ -7,13 +7,14 @@ use Illuminate\Support\Facades\DB;
 use App\userModel;
 use App\product;
 use App\address;
+use App\manager;
 class AdminController extends Controller
 {
     public function index()
     {
         return view('Admin.home');
     }
-    function user(Request $req)
+    function user()
     {
         $user = userModel::all();
         $address =  address::where('type','user')->get();
@@ -63,7 +64,7 @@ class AdminController extends Controller
         return redirect('admin/user');
     }
     
-    function Product(Request $req)
+    function Product()
     {
         $data = product::all();
         return view('Admin.Product',['data1'=>$data]);
@@ -96,9 +97,51 @@ class AdminController extends Controller
         // print_r($req->input());
         return redirect('admin/product');
     }
-    function Address(Request $req)
+    function Address()
     {
         $data = address::all();
         return view('Admin.Address',['data1'=>$data]);
+    }
+    function Manageradd(Request $req)
+    {
+        // print_r($req->input());
+        $data = userModel::where('id',$req->bt)->get();
+        $a = $data[0];
+        if($a->role == 'admin')
+        {
+            return redirect('admin/user');
+        }
+        else
+        {
+            userModel::where('id',$req->bt)->update(['role' => 'manager']);
+            $data = new manager;
+            $data->Manager_id = $req->bt;
+            $data->email = $a->email;
+            $data->Phone_no = $a->Phone_no;
+            $data->save();
+                return redirect('admin/user');
+        }
+
+        
+    }
+    function Managerdelete(Request $req)
+    {
+        $data = userModel::where('id',$req->bt)->get();
+        $a = $data[0];
+        if($a->role == 'admin')
+        {
+            return redirect('admin/user');
+        }
+        else
+        {        
+        manager::where('Manager_id',$req->bt)->delete();
+        userModel::where('id',$req->bt)->update(['role' => '']);
+        return redirect('admin/user');
+        }
+    }
+    function Manager()
+    {
+        $data = manager::all();
+        return view('Admin.Manager',['data'=>$data]);
     }
 }

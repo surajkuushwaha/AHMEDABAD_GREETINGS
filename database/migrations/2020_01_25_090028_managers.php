@@ -15,10 +15,10 @@ class Managers extends Migration
     {
         Schema::create('Managers', function (Blueprint $table) {
             $table->integer('Manager_id');
-            $table->string('email');
-            $table->bigInteger('Phone_no');
-            $table->integer('address_id');
-            $table->boolean('verified');
+            // $table->timestamp('email_verified_at')->nullable();
+            $table->bigInteger('Phone_no')->nullable();
+            $table->integer('address_id')->nullable();
+            $table->boolean('verified')->nullable();
             $table->timestamps();
         });
     }

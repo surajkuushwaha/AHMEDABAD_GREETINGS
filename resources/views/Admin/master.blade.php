@@ -49,7 +49,7 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Manager</a>
+                        <a href="{{ url('/admin/Manager') }}" class="nav-link">Manager</a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('/admin/product') }}" class="nav-link"

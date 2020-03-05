@@ -13,6 +13,7 @@
 
 /////////////////////////////////ADMIN////////////////////////////
 Route::group(['middleware' =>['auth','admin']],function(){
+    
     Route::get('admin','AdminController@index');
     Route::get('admin/user','AdminController@user');
     Route::post('admin/user/edituser','AdminController@edituser');
@@ -34,10 +35,10 @@ Route::group(['middleware' =>['auth','admin']],function(){
 
 
     Route::get('admin/Address','AdminController@Address');
+    Route::get('admin/Manager','AdminController@Manager');
+    Route::post('admin/Manager/add','AdminController@Manageradd');
+    Route::post('admin/Manager/delete','AdminController@Managerdelete');
     });
-// Route::get('admin','AdminController@index');
-
-
 //////////////////////////////////////////////////////////////////
 
 

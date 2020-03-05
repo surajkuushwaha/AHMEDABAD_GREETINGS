@@ -114,14 +114,14 @@ $a = "Product";
                             <h5 class="modal-title" id="exampleModalLabel">
                                 Add Products
                             </h5>
-                            <button
+                            <!-- <button
                                 type="button"
                                 class="close"
                                 data-dismiss="modal"
                                 aria-label="Close"
                             >
                                 <span aria-hidden="true">&times;</span>
-                            </button>
+                            </button> -->
                         </div>
                         <div class="modal-body">
                             <form action="product/add" method="POST">
