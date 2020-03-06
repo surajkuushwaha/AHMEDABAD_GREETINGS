@@ -41,11 +41,13 @@ Route::group(['middleware' =>['auth','admin']],function(){
     });
 //////////////////////////////////////////////////////////////////
 
+Route::group(['middleware' =>['auth','manager']],function(){
 
+    Route::get('manager','ManagerController@index');
 
+});
 
-
-
+Route::view('welcome','Home.home');
 
 
 
