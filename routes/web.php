@@ -35,6 +35,13 @@ Route::group(['middleware' =>['auth','admin']],function(){
 
 
     Route::get('admin/Address','AdminController@Address');
+    Route::post('admin/Address/ADDAddress','AdminController@ADDAddress');
+    Route::post('admin/Address/delete','AdminController@DeleteAddress');
+    Route::post('admin/Address/edit','AdminController@editAddress');
+    Route::post('admin/Address/finaledit','AdminController@finaleditAddress');
+    // Route::view('tempp','Admin.Editaddress');
+
+
     Route::get('admin/Manager','AdminController@Manager');
     Route::post('admin/Manager/add','AdminController@Manageradd');
     Route::post('admin/Manager/delete','AdminController@Managerdelete');
@@ -44,6 +51,8 @@ Route::group(['middleware' =>['auth','admin']],function(){
 Route::group(['middleware' =>['auth','manager']],function(){
 
     Route::get('manager','ManagerController@index');
+    Route::get('manager/profile','ManagerController@profile');
+    Route::post('manager/profile/editprofile','ManagerController@editprofile');
 
 });
 

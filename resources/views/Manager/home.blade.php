@@ -11,8 +11,6 @@ $a = "Manager";
 $d=$data[0];
 print_r($d->Manager_id);
 print_r($d->email);
-print_r($d->Phone_no);
-
 ?>
 
 <!-- Button trigger modal -->

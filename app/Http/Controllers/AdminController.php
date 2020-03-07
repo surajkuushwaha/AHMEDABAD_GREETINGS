@@ -102,6 +102,39 @@ class AdminController extends Controller
         $data = address::all();
         return view('Admin.Address',['data1'=>$data]);
     }
+    function ADDAddress(Request $req)
+    {
+        $data = new address;
+        // print_r($req->input());
+        $data->Address_id = $req->Id;
+        $data->street = $req->street;
+        $data->Pin_code = $req->pin_code;
+        $data->city = $req->city;
+        $data->type = $req->type;
+        $data->state = $req->state;
+        $data->save();
+        return redirect('admin/Address');
+    }
+    function DeleteAddress(Request $req)
+    {
+        address::where('Address_id',$req->bt)->delete();
+        return redirect('admin/Address');
+
+    }
+    function finaleditAddress(Request $req)
+    {
+        address::where('Address_id',$req->Id)->update(['street'=>$req->street,'Pin_code'=>$req->pin_code,'city'=>$req->city,'type'=>$req->type,'state'=>$req->state]);
+        // address::where('street',$req->street)->update(['Address_id',$req->Id]);
+        // print_r($req->input());
+        // echo $req->id;
+        return redirect('admin/Address');
+    }
+    function editAddress(Request $req)
+    {
+        // print_r($req->input());
+        $data = address::where('Address_id',$req->bt)->get();
+        return view('Admin.Editaddress',['data'=>$data]);
+    }
     function Manageradd(Request $req)
     {
         // print_r($req->input());
