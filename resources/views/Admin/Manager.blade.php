@@ -14,6 +14,7 @@ $a = "suraj";
                 <thead>
                     <tr>
                         <th scope="col">Manager_id</th>
+                        <th scope="col">name</th>
                         <th scope="col">email</th>
                         <th scope="col">Phone_no</th>
                         <!-- <th scope="col">email_verified_at</th> -->
@@ -26,7 +27,12 @@ $a = "suraj";
                     @foreach($data as $i)
                     <tr>
                         <th scope="row">{{$i->Manager_id}}</th>
-                        <td>{{$i->email}}</td>
+                        @foreach($user as $j)
+                            @if($j->id == $i->Manager_id)
+                            <td>{{$j->name}}</td>                    
+                            <td>{{$j->email}}</td>                    
+                            @endif
+                        @endforeach
                         <td>{{$i->Phone_no}}</td>
                         <!-- <td>{{$i->email_verified_at}}</td> -->
                         <td>{{$i->verified}}</td>

@@ -149,7 +149,6 @@ class AdminController extends Controller
             userModel::where('id',$req->bt)->update(['role' => 'manager']);
             $data = new manager;
             $data->Manager_id = $req->bt;
-            $data->email = $a->email;
             $data->Phone_no = $a->Phone_no;
             $data->save();
                 return redirect('admin/user');
@@ -175,6 +174,7 @@ class AdminController extends Controller
     function Manager()
     {
         $data = manager::all();
-        return view('Admin.Manager',['data'=>$data]);
+        $data1 = userModel::where('role','manager')->get();
+        return view('Admin.Manager',['data'=>$data],['user'=>$data1]);
     }
 }

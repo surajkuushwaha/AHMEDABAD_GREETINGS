@@ -7,12 +7,17 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href="{{ asset('image/fav.png') }}" type="image/gif" sizes="16x16">
+        <link
+            rel="icon"
+            href="{{ asset('image/fav.png') }}"
+            type="image/gif"
+            sizes="16x16"
+        />
         <link
             rel="stylesheet"
             href="{{ asset('css/bootstrap/bootstrap.css') }}"
         />
-        
+
         @yield('css')
 
         <title>@yield('title')</title>
@@ -41,26 +46,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link"
-                            >User</a
+                        <a href="{{ url('/manager/profile') }}" class="nav-link"
+                            >Profile</a
                         >
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Manager</a>
+                        <a href="#" class="nav-link">link</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link"
-                            >Products</a
-                        >
+                        <a href="#" class="nav-link">link</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Party Plots</a>
+                        <a href="#" class="nav-link">link</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Address</a>
+                        <a href="#" class="nav-link">link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">link</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -188,7 +191,5 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
-        
-        
     </body>
 </html>
