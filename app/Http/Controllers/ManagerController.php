@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\manager;
 use App\address;
 use App\userModel;
+use Image;
+use File;
 use Illuminate\Http\Response;
 class ManagerController extends Controller
 {
@@ -54,18 +56,24 @@ class ManagerController extends Controller
         return redirect('manager/profile');
         // print_r($req->input());
     }
-    // function manageredit(Request $req)
-    // {
-    //     $data = userModel::where('id',$req->bt)->get();
-    //     $address =  address::where('type','user')->get();
-    //     return view('Manager.manageredit',['data'=>$data],['address'=>$address]);
-    // }
-    // function finaledit(Request $req)
-    // {
-    //     userModel::where('id',$req->id)
-    //             ->update(['name' => $req->name,'email'=>$req->email,'address_id'=>$req->address_id,'Phone_no'=>$req->phone]);
-    //     address::where('Address_id',$req->address_id)
-    //             ->update(['street'=>$req->address_street,'Pin_code'=>$req->address_Pin_code,'state'=>$req->address_State,'city'=>$req->address_city]);
-    //     return redirect('admin/user');
-    // }
+    function uploadimage(Request $req)
+    {        
+        if($req->file('image'))
+        {   
+            $image_path = public_path("uploads/user/".Auth::user()->image);
+        
+            if(File::exists($image_path)) {
+                    File::delete($image_path);
+                }
+            
+            $image = $req->file('image');
+            $filename = time().".".$image->getClientOriginalExtension();
+            Image::make($image)->resize(150,150)->save(public_path("uploads/user/".$filename));
+            $user = Auth::user();
+            $user->image = $filename;
+            $user->save();          
+        }
+        return redirect('manager/profile');
+        
+    }
 }

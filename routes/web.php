@@ -54,6 +54,7 @@ Route::group(['middleware' =>['auth','manager']],function(){
     Route::post('manager/ADDAddress','ManagerController@ADDAddress');
     Route::get('manager/profile','ManagerController@profile');
     Route::post('manager/profile/editprofile','ManagerController@editprofile');
+    Route::post('manager/profile/uploadimage','ManagerController@uploadimage');
 
 });
 

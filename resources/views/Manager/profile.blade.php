@@ -45,6 +45,7 @@ $a = "Manager";
                         <div class="col-md-6">
                             <h6>Address</h6>
                             <?php
+                            if(isset($user[0]))
                             $u = $user[0];
                             ?>
                             @if(isset($u))
@@ -238,6 +239,7 @@ $a = "Manager";
                                     />
                                 </div>
                             </div>
+                            @if(isset($u))
 
                             <div class="form-group row">
                                 <label
@@ -303,41 +305,11 @@ $a = "Manager";
                                     />
                                 </div>
                             </div>
+                            @endif
 
 
 
-<!-- 
-                            <div class="form-group row">
-                                <label
-                                    class="col-lg-3 col-form-label form-control-label"
-                                ></label>
-                                <div class="col-lg-3">
-                                    <input
-                                        class="form-control"
-                                        type="text"
-                                        value="{{$u->city}}"
-                                        placeholder="{{$u->city}}"
-                                    />
-                                </div>
-                                <div class="col-lg-3">
-                                    <input
-                                        class="form-control"
-                                        type="text"
-                                        name="state"
-                                        value="{{$u->state}}"
-                                        placeholder="{{$u->state}}"
-                                    />
-                                </div>
-                                <div class="col-lg-3">
-                                    <input
-                                        class="form-control"
-                                        type="text"
-                                        name="pin_code"
-                                        value="{{$u->Pin_code}}"
-                                        placeholder="{{$u->Pin_code}}"
-                                    />
-                                </div>
-                            </div> -->
+
 
                             <div class="form-group row">
                                 <label
@@ -380,14 +352,19 @@ $a = "Manager";
             </div>
             <div class="col-lg-4 order-lg-1 text-center">
                 <img
-                    src="//placehold.it/150"
+                    src="/uploads/user/{{Auth::user()->image}}"
                     class="mx-auto img-fluid img-circle d-block"
-                    alt="avatar"
+                    alt="{{Auth::user()->image}}"
                 />
                 <h6 class="mt-2">Upload a different photo</h6>
                 <label class="custom-file">
-                    <input type="file" id="file" class="custom-file-input" />
-                    <span class="custom-file-control">Choose file</span>
+                <form action="profile/uploadimage" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    
+                    <input type="file" id="file" name="image" class="custom-file-input" />
+                    <span class="custom-file-control">Choose file</span><br><br>
+                    <input type="submit" name="submit" class="btn btn-primary">
+                </form>
                 </label>
             </div>
         </div>
