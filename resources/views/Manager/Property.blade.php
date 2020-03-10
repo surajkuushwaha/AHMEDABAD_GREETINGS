@@ -1,11 +1,7 @@
-@extends('Admin/master')
-<?php
-$a = "suraj";
-?>
-
-@section('title',$a) @section('header') @parent @endsection @section('content')
-<div class="container-flude">
-    <div class="row mt-10">
+@extends('Manager/master') @section('title',Auth::user()->name)
+@section('header') @parent @endsection @section('content')
+<div class="container-fluid">
+    <div class="row">
         <div class="col-sm-2">
             <button
                 type="submit"
@@ -23,72 +19,28 @@ $a = "suraj";
             </button>
         </div>
         <div class="col-sm-8">
-            <table class="table">
+            <table id="datatable" class="table border border-info mt-3">
                 <thead>
                     <tr>
-                        <th scope="col">Address_id</th>
-                        <th scope="col">street</th>
-                        <th scope="col">Pin_code</th>
-                        <th scope="col">city</th>
-                        <th scope="col">state</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">address</th>
+                        <th scope="col">phone_no</th>
+                        <th scope="col">role</th>
                         <th scope="col">created_at</th>
                         <th scope="col">updated_at</th>
-                        <th scope="col" colspan="2">Action</th>
+                        <th scope="col" colspan="3">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($data1 as $i)
-                    <tr>
-                        <th scope="row">{{$i->Address_id}}</th>
-                        <td>{{$i->street}}</td>
-                        <td>{{$i->Pin_code}}</td>
-                        <td>{{$i->city}}</td>
-                        <td>{{$i->state}}</td>
-                        <td>{{$i->created_at}}</td>
-                        <td>{{$i->updated_at}}</td>
-                        <td>
-                            <form action="Address/delete" method="POST">
-                                @csrf
-                                <button
-                                    type="submit"
-                                    class="btn btn-danger"
-                                    name="bt"
-                                    value="{{$i->Address_id}}"
-                                >
-                                    <img
-                                        src="{{ asset('svg/delete.svg') }}"
-                                        alt="ds"
-                                        height="40"
-                                        width="30"
-                                    />
-                                </button>
-                            </form>
-                        </td>
-                        <td>
-                            <form action="Address/edit" method="POST">
-                                @csrf
-                                <button
-                                    type="submit"
-                                    class="btn btn-light"
-                                    name="bt"
-                                    value="{{$i->Address_id}}"
-                                >
-                                    <img
-                                        src="{{ asset('svg/edit.svg') }}"
-                                        alt="ds"
-                                        height="40"
-                                        width="30"
-                                    />
-                                </button>
-                            </form>
-                        </td>
-                    </tr>
-                    @endforeach
+                    <tr></tr>
                 </tbody>
             </table>
+
+            <!-- Modal -->
         </div>
         <div class="col-sm-2">
-            <!--  -->
             <div
                 class="modal fade"
                 id="exampleModal"
@@ -101,19 +53,11 @@ $a = "suraj";
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">
-                                Add Address
+                                Add Property
                             </h5>
-                            <!-- <button
-                                type="button"
-                                class="close"
-                                data-dismiss="modal"
-                                aria-label="Close"
-                            >
-                                <span aria-hidden="true">&times;</span>
-                            </button> -->
                         </div>
                         <div class="modal-body">
-                            <form action="Address/ADDAddress" method="POST">
+                            <form action="#" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="formGroupExampleInput"

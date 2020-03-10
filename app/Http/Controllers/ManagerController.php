@@ -76,4 +76,12 @@ class ManagerController extends Controller
         return redirect('manager/profile');
         
     }
+    function Property()
+    {
+        return view('Manager.Property');
+    }
+    function AddProperty()
+    {
+        echo "add property";
+    }
 }

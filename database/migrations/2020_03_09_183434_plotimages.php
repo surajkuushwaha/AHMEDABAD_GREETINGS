@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class PartyPlots extends Migration
+class Plotimages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,13 @@ class PartyPlots extends Migration
      */
     public function up()
     {
-        Schema::create('PartyPlots', function (Blueprint $table) {
+        //
+        Schema::create('Plotimages', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('Plot_id');
-            $table->string('name',20);
-            $table->integer('Event_id');
-            $table->integer('Height');
-            $table->integer('Width');
-            $table->integer('Packege');
-            $table->integer('owner');
-            $table->integer('address_id');            
+            $table->mediumText('image1')->nullable();
+            $table->mediumText('image2')->nullable();
+            $table->mediumText('image3')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +31,6 @@ class PartyPlots extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('PartyPlots');
+        //
     }
 }

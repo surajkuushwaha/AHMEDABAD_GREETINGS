@@ -55,10 +55,32 @@ Route::group(['middleware' =>['auth','manager']],function(){
     Route::get('manager/profile','ManagerController@profile');
     Route::post('manager/profile/editprofile','ManagerController@editprofile');
     Route::post('manager/profile/uploadimage','ManagerController@uploadimage');
+    Route::get('manager/Property','ManagerController@Property');
 
 });
 
 Route::view('welcome','Home.home');
+
+
+
+
+///////////////////////////User///////////////////////////////////
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/profile','HomeController@profile');
+    Route::post('/ADDAddress','HomeController@ADDAddress');
+    Route::get('/profile','HomeController@profile');
+    Route::post('/profile/editprofile','HomeController@editprofile');
+    Route::post('/profile/uploadimage','HomeController@uploadimage');
+
+
+/////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 
@@ -97,13 +119,9 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
 
 

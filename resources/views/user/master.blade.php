@@ -25,7 +25,7 @@
     <body>
         @section('header')
         <nav class="navbar navbar-expand-md navbar-light bg-info navi">
-            <a class="navbar-brand" href="{{url('/')}}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img
                     src="{{ asset('image/logo.png') }}"
                     width="200"
@@ -46,14 +46,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                    <a href="{{url('/manager')}}" class="nav-link">Home</a>
+                        <a href="{{ url('/profile') }}" class="nav-link"
+                            >Profile</a
+                        >
                     </li>
                     <li class="nav-item">
-                    <a href="{{ url('/manager/profile') }}" class="nav-link"
-                            >Profile</a>
+                        <a href="#" class="nav-link">link</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/manager/Property') }}" class="nav-link">Property</a>
+                        <a href="#" class="nav-link">link</a>
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">link</a>
@@ -68,7 +69,11 @@
                 <ul class="navbar-nav ml-auto">
                     @if (Route::has('login')) @auth
                     <li class="nav-item ml-auto">
-                        <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                        <a
+                            class="nav-link"
+                            href="{{ url('/profile') }}"
+                            >{{Auth::user()->name}}</a
+                        >
                     </li>
                     @else
                     <li class="nav-item">
@@ -88,7 +93,7 @@
         </nav>
         @show @yield('content') @section('footer')
         <!-- Footer -->
-        <footer style="background-color: #2c292f">
+        <footer style="background-color: #23262e">
             <div class="container">
                 <div class="row ">
                     <div class="col-md-4 text-center text-md-left ">
@@ -126,9 +131,11 @@
                         <div class="py-2 my-4">
                             <div>
                                 <p class="text-white">
-                                    <i class="fa fa-map-marker mx-2 ">Opp
-                                    Civil, Near Gujarat High Court, S.G.Highway,
-                                    Sola, Ahmedabad, Gujarat 380060</i>
+                                    <i class="fa fa-map-marker mx-2 "
+                                        >Opp Civil, Near Gujarat High Court,
+                                        S.G.Highway, Sola, Ahmedabad, Gujarat
+                                        380060</i
+                                    >
                                 </p>
                             </div>
 
