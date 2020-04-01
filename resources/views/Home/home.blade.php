@@ -1,6 +1,6 @@
 @extends('Home/master')
 <?php
-$a = "home";
+$a = "Packages";
 ?>
 
 @section('title',$a) @section('header') @parent @endsection @section('content')
@@ -14,15 +14,14 @@ $a = "home";
                 <img
                     src="{{ asset('image/gold.png') }}"
                     class="card-img-top"
-                    alt="..."
+                    alt="GOLD"
                 />
                 <div class="card-body">
                     <h5 class="card-title">Gold Package</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                       This pack can be used For Bigger Celebrations.It can be Used for Buisness Parties, Anniversary.It contains Everything in a single pack.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{url('/Package/Gold')}}" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
         </div>
@@ -32,15 +31,14 @@ $a = "home";
                 <img
                     src="{{ asset('image/silver.png') }}"
                     class="card-img-top"
-                    alt="..."
+                    alt="SILVER"
                 />
                 <div class="card-body">
                     <h5 class="card-title">Silver Package</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                    This package is also known to be a Value For Money package.This pack can be used for Normal Birthday Parties, Anniversary.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="{{url('')}}" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
         </div>
@@ -50,15 +48,14 @@ $a = "home";
                 <img
                     src="{{ asset('image/bronze.png') }}"
                     class="card-img-top"
-                    alt="..."
+                    alt="BRONZE"
                 />
                 <div class="card-body">
                     <h5 class="card-title">Bronze Package</h5>
                     <p class="card-text">
-                        Some quick example text to build on the card title and
-                        make up the bulk of the card's content.
+                        This is the most Economical Pack for Our Users as it can be used for Small Parties, Get-together, College Celebration.
                     </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <a href="#" class="btn btn-primary">Order Now</a>
                 </div>
             </div>
         </div>

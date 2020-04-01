@@ -7,12 +7,17 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href="{{ asset('image/fav.png') }}" type="image/gif" sizes="16x16">
+        <link
+            rel="icon"
+            href="{{ asset('image/fav.png') }}"
+            type="image/gif"
+            sizes="16x16"
+        />
         <link
             rel="stylesheet"
             href="{{ asset('css/bootstrap/bootstrap.css') }}"
         />
-        
+
         @yield('css')
 
         <title>@yield('title')</title>
@@ -20,7 +25,7 @@
     <body>
         @section('header')
         <nav class="navbar navbar-expand-md navbar-light bg-info navi">
-            <a class="navbar-brand" href="{{url('/')}}">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <img
                     src="{{ asset('image/logo.png') }}"
                     width="200"
@@ -49,7 +54,9 @@
                         >
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/Manager') }}" class="nav-link">Manager</a>
+                        <a href="{{ url('/admin/Manager') }}" class="nav-link"
+                            >Manager</a
+                        >
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('/admin/product') }}" class="nav-link"
@@ -60,7 +67,9 @@
                         <a href="#" class="nav-link">Party Plots</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/Address') }}" class="nav-link">Address</a>
+                        <a href="{{ url('/admin/Address') }}" class="nav-link"
+                            >Address</a
+                        >
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -86,7 +95,7 @@
         </nav>
         @show @yield('content') @section('footer')
         <!-- Footer -->
-        <footer style="background-color: #2c292f">
+        <footer style="background-color: #23262e">
             <div class="container">
                 <div class="row ">
                     <div class="col-md-4 text-center text-md-left ">
@@ -124,9 +133,11 @@
                         <div class="py-2 my-4">
                             <div>
                                 <p class="text-white">
-                                    <i class="fa fa-map-marker mx-2 "></i>Opp
-                                    Civil, Near Gujarat High Court, S.G.Highway,
-                                    Sola, Ahmedabad, Gujarat 380060
+                                    <i class="fa fa-map-marker mx-2 "
+                                        >Opp Civil, Near Gujarat High Court,
+                                        S.G.Highway, Sola, Ahmedabad, Gujarat
+                                        380060</i
+                                    >
                                 </p>
                             </div>
 
@@ -151,7 +162,10 @@
                         class="col-md-4 text-white my-4 text-center text-md-left "
                     >
                         <span class=" font-weight-bold "
-                            >About surajkushwaha.live</span
+                            >About
+                            <a href="http://surajkushwaha.live/"
+                                >surajkushwaha.live</a
+                            ></span
                         >
                         <p class="text-warning my-2">
                             Event management is the application of the
@@ -206,7 +220,5 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
-        
-        
     </body>
 </html>

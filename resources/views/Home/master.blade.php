@@ -7,14 +7,39 @@
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-        <link rel="icon" href="{{ asset('image/fav.png') }}" type="image/gif" sizes="16x16">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!-- <link
+        <link
+            rel="icon"
+            href="{{ asset('image/fav.png') }}"
+            type="image/gif"
+            sizes="16x16"
+        />
+        <link
             rel="stylesheet"
             href="{{ asset('css/bootstrap/bootstrap.css') }}"
-        /> -->
-        
-        @yield('css')
+        />
+
+        <style>
+            #myform {
+                text-align: center;
+                padding: 5px;
+                border: 1px dotted #ccc;
+                margin: 2%;
+            }
+            .qty {
+                width: 40px;
+                height: 25px;
+                text-align: center;
+            }
+            input.qtyplus {
+                width: 25px;
+                height: 25px;
+            }
+            input.qtyminus {
+                width: 25px;
+                height: 25px;
+            }
+        </style>
+        @yield('js') @yield('css')
 
         <title>@yield('title')</title>
     </head>
@@ -61,7 +86,9 @@
                         <a href="#" class="nav-link">Party Plots</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/admin/Address') }}" class="nav-link">Address</a>
+                        <a href="{{ url('/admin/Address') }}" class="nav-link"
+                            >Address</a
+                        >
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
@@ -125,9 +152,11 @@
                         <div class="py-2 my-4">
                             <div>
                                 <p class="text-white">
-                                    <i class="fa fa-map-marker mx-2 ">Opp
-                                    Civil, Near Gujarat High Court, S.G.Highway,
-                                    Sola, Ahmedabad, Gujarat 380060</i>
+                                    <i class="fa fa-map-marker mx-2 "
+                                        >Opp Civil, Near Gujarat High Court,
+                                        S.G.Highway, Sola, Ahmedabad, Gujarat
+                                        380060</i
+                                    >
                                 </p>
                             </div>
 
@@ -210,7 +239,5 @@
             integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
             crossorigin="anonymous"
         ></script>
-        
-        
     </body>
 </html>

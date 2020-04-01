@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8" />
@@ -97,7 +97,7 @@
                 <div class="links">
                     <a href="#">About us</a>
                     <a href="{{url('/profile')}}">Profile</a>
-                    <a href="{{ url('/welcome') }}">Party packs</a>
+                    <a href="{{ url('/Package') }}">Party packs</a>
                     <a href="#">link</a>
                     <a href="#">link</a>
                     <a href="#">link</a>

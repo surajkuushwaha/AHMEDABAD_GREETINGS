@@ -59,7 +59,7 @@ Route::group(['middleware' =>['auth','manager']],function(){
 
 });
 
-Route::view('welcome','Home.home');
+
 
 
 
@@ -78,6 +78,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /////////////////////////////////////////////////////////////////
 
+Route::get('/Package', 'Packagecontroller@index');
+Route::get('/Package/Gold', 'Packagecontroller@Gold');
 
 
 
