@@ -1,0 +1,69 @@
+.words {
+    z-index: 2;
+}
+
+.box {
+    position: fixed;
+    top: 0;
+    transform: rotate(80deg);
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+
+.wave {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    width: 70%;
+    height: 100%;
+    margin-left: -100px;
+    margin-top: -200px;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 7000ms infinite linear;
+}
+
+.box:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+    from {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(360deg);
+    }
+}
+.wave:nth-child(1) {
+    animation: drift 5897ms infinite linear;
+    background-color: #00d700;
+    transform-origin: 50% 45%;
+    border-radius: 46%;
+}
+
+.wave:nth-child(2) {
+    animation: drift 4097ms infinite linear;
+    background-color: #009400;
+    transform-origin: 50% 60%;
+    border-radius: 45%;
+}
+
+.wave:nth-child(3) {
+    animation: drift 3973ms infinite linear;
+    background-color: #00d700;
+    transform-origin: 50% 43%;
+    border-radius: 53%;
+}

@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8" />
@@ -17,13 +17,22 @@
             href="https://fonts.googleapis.com/css?family=Nunito:200,600"
             rel="stylesheet"
         />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Bitter&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+            rel="stylesheet"
+        />
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ asset('css/home.css') }}" />
         <style>
             html,
             body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: black;
+                color: #ffffff;
                 font-family: "Nunito", sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -56,16 +65,18 @@
 
             .title {
                 font-size: 84px;
+                font-family: "Bitter", serif;
             }
 
             .links > a {
-                color: #636b6f;
+                color: #ffffff;
                 padding: 0 25px;
-                font-size: 13px;
+                font-size: 18px;
                 font-weight: 600;
                 letter-spacing: 0.1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                font-family: "Shadows Into Light", cursive;
             }
 
             .m-b-md {
@@ -74,6 +85,9 @@
         </style>
     </head>
     <body>
+        <div id="container"></div>
+        <div class="box" id="box"></div>
+        <div class="words display-1 p-5 position-relative d-none"></div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
             <div class="top-right links">
@@ -96,12 +110,8 @@
 
                 <div class="links">
                     <a href="#">About us</a>
-                    <a href="{{url('/profile')}}">Profile</a>
+                    <a href="{{ url('/profile') }}">Profile</a>
                     <a href="{{ url('/Package') }}">Party packs</a>
-                    <a href="#">link</a>
-                    <a href="#">link</a>
-                    <a href="#">link</a>
-                    <a href="#">link</a>
                     <a
                         href="https://github.com/suraj00000/AHMEDABAD_GREETINGS"
                         target="_blank"
@@ -110,5 +120,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{ asset('js/home.js') }}"></script>
     </body>
 </html>
