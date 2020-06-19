@@ -80,6 +80,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/Package', 'Packagecontroller@index');
 Route::get('/Package/Gold', 'Packagecontroller@Gold');
+Route::get('/Package/Silver', 'Packagecontroller@Silver');
+Route::get('/Package/Bronze', 'Packagecontroller@Bronze');
 
 
 

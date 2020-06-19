@@ -49,21 +49,21 @@
 }
 .wave:nth-child(1) {
     animation: drift 5897ms infinite linear;
-    background-color: #00d700;
+    background-color: #fd6a02;
     transform-origin: 50% 45%;
     border-radius: 46%;
 }
 
 .wave:nth-child(2) {
     animation: drift 4097ms infinite linear;
-    background-color: #009400;
+    background-color: #ef7215;
     transform-origin: 50% 60%;
     border-radius: 45%;
 }
 
 .wave:nth-child(3) {
     animation: drift 3973ms infinite linear;
-    background-color: #00d700;
+    background-color: #f05e23;
     transform-origin: 50% 43%;
     border-radius: 53%;
 }

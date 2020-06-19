@@ -17,6 +17,7 @@
             rel="stylesheet"
             href="{{ asset('css/bootstrap/bootstrap.css') }}"
         />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         @yield('css')
 
@@ -176,22 +177,22 @@
                         <div class="py-2">
                             <a href="#"
                                 ><i
-                                    class="fab fa-facebook fa-2x text-primary mx-3"
+                                    class="fa fa-facebook fa-2x text-primary mx-3"
                                 ></i
                             ></a>
                             <a href="#"
                                 ><i
-                                    class="fab fa-google-plus fa-2x text-danger mx-3"
+                                    class="fa fa-google-plus fa-2x text-danger mx-3"
                                 ></i
                             ></a>
                             <a href="#"
                                 ><i
-                                    class="fab fa-twitter fa-2x text-info mx-3"
+                                    class="fa fa-twitter fa-2x text-info mx-3"
                                 ></i
                             ></a>
                             <a href="#"
                                 ><i
-                                    class="fab fa-youtube fa-2x text-danger mx-3"
+                                    class="fa fa-youtube fa-2x text-danger mx-3"
                                 ></i
                             ></a>
                         </div>

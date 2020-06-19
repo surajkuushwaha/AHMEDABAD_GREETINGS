@@ -21,64 +21,247 @@
     <link href="{{ asset('css/boot.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<nav class="navbar navbar-expand-md navbar-light bg-info navi">
+            <a class="navbar-brand" href="{{ url('/') }}">
+                <img
+                    src="{{ asset('image/logo.png') }}"
+                    width="200"
+                    height="40"
+                    alt=""
+            /></a>
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="{{ url('/profile') }}" class="nav-link"
+                            >Profile</a
+                        >
+                    </li>
+                    <li class="nav-item">
+                    <a href="{{ url('/Package') }}" class="nav-link">Party packs</a>
+                    </li>
+                    <li class="nav-item">
+                    <a
+                        href="https://github.com/suraj00000/AHMEDABAD_GREETINGS"
+                        target="_blank"
+                        class="nav-link"
+                        >GitHub</a
+                    >
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">link</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">link</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    @if (Route::has('login')) @auth
+                    <!-- <li class="nav-item ml-auto">
+                        <a
+                            class="nav-link"
+                            href="{{ url('/profile') }}"
+                            >{{Auth::user()->name}}</a
+                        >
+                    </li> -->
+                    <li class="nav-item dropdown nav-link">
+                        <a
+                            id="navbarDropdown"
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            v-pre
+                        >
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                        <div
+                            class="dropdown-menu dropdown-menu-right"
+                            aria-labelledby="navbarDropdown" 
+                        >
+                            <a
+                                class="dropdown-item"
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();"
+                            >
+                                {{ __("Logout") }}
+                            </a>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
+                            <form
+                                id="logout-form"
+                                action="{{ route('logout') }}"
+                                method="POST"
+                                style="display: none;"
+                            >
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}"
+                            >Login</a
+                        >
+                    </li>
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}"
+                            >Register</a
+                        >
+                    </li>
+                    @endif @endauth @endif
+                </ul>
+                
             </div>
         </nav>
+   
     
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+    </div><footer style="background-color: #23262e">
+            <div class="container">
+                <div class="row ">
+                    <div class="col-md-4 text-center text-md-left ">
+                        <div class="py-0">
+                            <h3 class="my-4 text-white">
+                                About<span
+                                    class="mx-2 font-italic text-warning "
+                                    >Ahmedabad Greetings</span
+                                >
+                            </h3>
+
+                            <p class="footer-links font-weight-bold">
+                                <a class="text-white" href="{{ url('/') }}"
+                                    >Home</a
+                                >
+                                |
+                                <a class="text-white" href="#">Blog</a>
+                                |
+                                <a class="text-white" href="#">About</a>
+                                |
+                                <a
+                                    class="text-white"
+                                    target="_blank"
+                                    href="https://github.com/suraj00000/AHMEDABAD_GREETINGS"
+                                    >Github</a
+                                >
+                            </p>
+                            <p class="text-light py-4 mb-4">
+                                &copy;2019 Ahmedabad Greetings Ltd.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 text-white text-center text-md-left ">
+                        <div class="py-2 my-4">
+                            <div>
+                                <p class="text-white">
+                                    <i class="fa fa-map-marker mx-2 "
+                                        >Opp Civil, Near Gujarat High Court,
+                                        S.G.Highway, Sola, Ahmedabad, Gujarat
+                                        380060</i
+                                    >
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    <i class="fa fa-phone  mx-2 "></i> +91
+                                    91067XXXXX
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <i class="fa fa-envelope  mx-2"></i
+                                    ><a href="mailto:skk74143@gmail.com"
+                                        >skk74143@gmail.com</a
+                                    >
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="col-md-4 text-white my-4 text-center text-md-left "
+                    >
+                        <span class=" font-weight-bold "
+                            >About
+                            <a href="http://surajkushwaha.live/"
+                                >surajkushwaha.live</a
+                            ></span
+                        >
+                        <p class="text-warning my-2">
+                            Event management is the application of the
+                            management practice of project management to the
+                            creation and development of festivals, events, and
+                            conferences.
+                        </p>
+                        <div class="py-2">
+                            <a href="#"
+                                ><i
+                                    class="fab fa-facebook fa-2x text-primary mx-3"
+                                ></i
+                            ></a>
+                            <a href="#"
+                                ><i
+                                    class="fab fa-google-plus fa-2x text-danger mx-3"
+                                ></i
+                            ></a>
+                            <a href="#"
+                                ><i
+                                    class="fab fa-twitter fa-2x text-info mx-3"
+                                ></i
+                            ></a>
+                            <a href="#"
+                                ><i
+                                    class="fab fa-youtube fa-2x text-danger mx-3"
+                                ></i
+                            ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Footer -->
+        @show
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
+
+
